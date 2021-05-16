@@ -63,6 +63,15 @@ header {
 }
 
 /*  PLAYGROUND  */
+.playground .score-description {
+    color: $color-black;
+    font-size: 20px;
+    text-align: center;
+}
+.playground .score {
+    font-size: 30px;
+    text-align: center;
+}
 .btn {
     height: 100px;
     width: 300px;
