@@ -1,2 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Newsreader:ital,wght@0,200;0,300;1,200;1,300&family=Norican&display=swap");
+/* GLOBAL */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+body {
+  margin: 0;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Newsreader", serif;
+  background-color: #fff;
+  color: #718093;
+  line-height: 1.7;
+}
+
+.box-title {
+  font-size: 20px;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* HEADER */
+header {
+  background-image: url("/images/pexels-photo.jpeg");
+  background-color: #fff;
+  background-size: cover;
+  height: 450px;
+}
+
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.splash-inner .page-subtitle {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 40px;
+}
+
+.splash-inner .page-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+}
+
+/* GAME DESCRIPTION */
+.game-description p {
+  text-indent: 5%;
+}
+
+.game-description .image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/*  PLAYGROUND  */
+.btn {
+  height: 100px;
+  width: 300px;
+  background-color: gold;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 30px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  border-radius: 50px 20px;
+}
+
+.playground .buttons-place {
+  display: flex;
+  justify-content: space-between;
+}
+
+.playground .buttons-place i {
+  font-size: 40px;
+}
+
+/*  FOOTER  */
+footer {
+  background-color: #dfe6e9;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtS0FBWTtBQVdaLFdBQUE7QUFFQTtFQUNJLHNCQUFzQjtBQ1YxQjs7QURZQTtFQUNJLFNBQVM7RUFDVCxnQkFBZ0I7RUFDaEIsZUFBZTtFQUNmLGdDQWxCa0M7RUFtQmxDLHNCQWZjO0VBZ0JkLGNBZHFCO0VBZXJCLGdCQUFnQjtBQ1RwQjs7QURXQTtFQUNJLGVBQWU7RUFDZixXQWpCYztFQWtCZCxxQ0F6QnVDO0FDaUIzQzs7QURVQSxXQUFBO0FBQ0E7RUFDSSxrREFBa0Q7RUFDbEQsc0JBM0JjO0VBNEJkLHNCQUFzQjtFQUN0QixhQUFhO0FDUGpCOztBRFNBO0VBQ0ksYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixtQkFBbUI7QUNOdkI7O0FEUUE7RUFDSSxXQXJDYztFQXNDZCwwQkFBMEI7RUFDMUIsZUFBZTtBQ0xuQjs7QURPQTtFQUNJLFdBMUNjO0VBMkNkLHlCQUF5QjtFQUN6QixxQ0EvQ3VDO0VBZ0R2QyxlQUFlO0FDSm5COztBRE1BLHFCQUFBO0FBRUE7RUFDSSxlQUFlO0FDSm5COztBRE1BO0VBQ0ksb0JBQWlCO0tBQWpCLGlCQUFpQjtFQUNqQixZQUFZO0VBQ1osV0FBVztBQ0hmOztBRE1BLGlCQUFBO0FBQ0E7RUFDSSxhQUFhO0VBQ2IsWUFBWTtFQUNaLHNCQTNEYztFQTREZCxXQS9EYztFQWdFZCxlQUFlO0VBRWYsZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixxQ0F2RXVDO0VBd0V2Qyx5QkFBeUI7RUFDekIsd0JBQXdCO0FDSjVCOztBRE1BO0VBQ0ksYUFBYTtFQUNiLDhCQUE4QjtBQ0hsQzs7QURNQTtFQUNJLGVBQWU7QUNIbkI7O0FES0EsYUFBQTtBQUVBO0VBQ0kseUJBbEZzQjtFQW1GdEIsWUFBWTtFQUNaLGlCQUFpQjtFQUNqQixrQkFBa0I7QUNIdEIiLCJmaWxlIjoic3R5bGUuY3NzIn0= */

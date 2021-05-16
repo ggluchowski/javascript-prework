@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Newsreader:ital,wght@0,200;0,300;1,200;1,300&family=Norican&display=swap');
+
+$font-family-base: 'Newsreader', serif;
+$font-family-head: 'Montserrat', sans-serif;
+$font-family-title: 'Norican', cursive;
+
+$color-white: #fff;
+$color-background: #dfe6e9;
+$color-text-body: #718093;
+$color-brand: gold;
+$color-black: #000;
+/* GLOBAL */
+
+*, *::before, *::after {
+    box-sizing: border-box;    
+}
+body {
+    margin: 0;
+    text-align: left;
+    font-size: 16px;
+    font-family: $font-family-base;
+    background-color: $color-white;
+    color: $color-text-body;
+    line-height: 1.7;
+}
+.box-title {
+    font-size: 20px;
+    color: $color-black;
+    font-family: $font-family-head;
+}
+/* HEADER */
+header {
+    background-image: url("/images/pexels-photo.jpeg");
+    background-color: $color-white;
+    background-size: cover;
+    height: 450px;
+}
+.splash-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.splash-inner .page-subtitle {
+    color: $color-white;
+    text-transform: capitalize;
+    font-size: 40px;
+}
+.splash-inner .page-title {
+    color: $color-white;
+    text-transform: uppercase;
+    font-family: $font-family-head;
+    font-size: 50px;
+}
+/* GAME DESCRIPTION */
+
+.game-description p {
+    text-indent: 5%;
+}
+.game-description .image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/*  PLAYGROUND  */
+.btn {
+    height: 100px;
+    width: 300px;
+    background-color: $color-brand;
+    color: $color-white;
+    font-size: 20px;
+    //font-weight: bold;
+    cursor: pointer;
+    line-height: 30px;
+    font-family: $font-family-head;
+    text-transform: uppercase;
+    border-radius: 50px 20px;
+}
+.playground .buttons-place {
+    display: flex;
+    justify-content: space-between;
+
+}
+.playground .buttons-place i{
+    font-size: 40px;
+}
+/*  FOOTER  */
+
+footer {
+    background-color: $color-background;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
