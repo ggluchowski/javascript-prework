@@ -70,24 +70,45 @@ function displayResult(argComputerMove, argPlayerMove){
 		printMessage('Gracz oszukuje!');
 	}
 	printScore(playerWins + ' - ' + computerWins);
+	console.log('Prawdopodobieństwo: ', (playerWins/(computerWins+playerWins)*100));
 }
 
 function playGame(playerInput){
-    console.log('Gracz wybrał: ' + playerInput);
-    
     let randomNumber = Math.floor(Math.random() * 3 + 1);
-
     console.log('Wylosowana liczba to: ' + randomNumber);
+	console.log('Gracz wybrał: ' + playerInput);
 
     let computerMove = getMoveName(randomNumber);
-
+	let playerMove = getMoveName(playerInput);
     //printMessage('Ruch komputera to: ' + computerMove);
-
     //let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-
-    let playerMove = getMoveName(playerInput);
-
     //printMessage('Twój ruch to: ' + playerMove);
 
     displayResult(computerMove, playerMove);
+}
+
+
+function playGameSymulation(){
+	
+	let proba = 100;
+	for (let  i = 0; i < proba; i++){
+	
+	let randomNumber = Math.floor(Math.random() * 3 + 1);
+	let randomNumberPlayer = Math.floor(Math.random() * 3 + 1);
+    
+    console.log('Komputer wybrał: ' + randomNumber);
+	console.log('Gracz wybrał: ' + randomNumberPlayer);
+	
+	// zwiekszenie do poziomu 66%, kolejny to 83% 
+	if (randomNumberPlayer == 2 && randomNumber == 3) {
+		randomNumber = 1;
+		console.log('---Po zmianie ', randomNumber);
+	}
+
+    let computerMove = getMoveName(randomNumber);
+    let playerMove = getMoveName(randomNumberPlayer);
+
+    displayResult(computerMove, playerMove);
+
+	}
 }
