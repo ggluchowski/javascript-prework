@@ -1,10 +1,10 @@
-function printMessage(msg){
+let printMessage = function (msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function printScore(msg){
+let printScore = function (msg){
 	let div = document.createElement('div');
 	document.getElementById('result').innerHTML = msg;
 }
@@ -13,7 +13,7 @@ function printScore(msg){
 	document.getElementById('messages', 'result').innerHTML = '';
 }*/
 
-function getMoveName(argMoveId){
+let getMoveName = function (argMoveId){
 	if(argMoveId == 1){
 	  return 'kamień';
 	} else if(argMoveId == 2) {
@@ -31,7 +31,7 @@ let playerWins = 0,
 console.log(playerWins);
 console.log(computerWins);
 
-function displayResult(argComputerMove, argPlayerMove){
+let displayResult = function (argComputerMove, argPlayerMove){
 	printMessage('Zagrałem: ' + argComputerMove + ', a Ty: ' + argPlayerMove);
 	console.log('moves:', argComputerMove, argPlayerMove);
 	
@@ -74,7 +74,7 @@ function displayResult(argComputerMove, argPlayerMove){
 	console.log('Prawdopodobieństwo: ', (playerWins/(computerWins+playerWins)*100));
 }
 
-function playGame(playerInput){
+let playGame = function (playerInput){
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
 	console.log('Gracz wybrał: ' + playerInput);
@@ -89,7 +89,7 @@ function playGame(playerInput){
 }
 
 
-function playGameSymulation(){
+let playGameSymulation = function (){
 	
 	const proba = 100;
 	for (let  i = 0; i < proba; i++){
