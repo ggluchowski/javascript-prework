@@ -9,9 +9,9 @@ function printScore(msg){
 	document.getElementById('result').innerHTML = msg;
 }
 
-function clearMessages(){
+/*function clearMessages(){
 	document.getElementById('messages', 'result').innerHTML = '';
-}
+}*/
 
 function getMoveName(argMoveId){
 	if(argMoveId == 1){
@@ -25,9 +25,10 @@ function getMoveName(argMoveId){
 	  return 'nieznany ruch';
 	}
 }
-let playerWins = 0;
+
+let playerWins = 0, 
+	computerWins = 0;
 console.log(playerWins);
-let computerWins = 0;
 console.log(computerWins);
 
 function displayResult(argComputerMove, argPlayerMove){
@@ -90,7 +91,7 @@ function playGame(playerInput){
 
 function playGameSymulation(){
 	
-	let proba = 100;
+	const proba = 100;
 	for (let  i = 0; i < proba; i++){
 	
 	let randomNumber = Math.floor(Math.random() * 3 + 1);
