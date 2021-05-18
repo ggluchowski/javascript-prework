@@ -1,19 +1,18 @@
-let printMessage = function (msg){
+const printMessage = function (msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-let printScore = function (msg){
-	let div = document.createElement('div');
+const printScore = function (msg){
 	document.getElementById('result').innerHTML = msg;
 }
 
-/*function clearMessages(){
+const clearMessages = function (){
 	document.getElementById('messages', 'result').innerHTML = '';
-}*/
+}
 
-let getMoveName = function (argMoveId){
+const getMoveName = function (argMoveId){
 	if(argMoveId == 1){
 	  return 'kamień';
 	} else if(argMoveId == 2) {
@@ -28,22 +27,17 @@ let getMoveName = function (argMoveId){
 
 let playerWins = 0, 
 	computerWins = 0;
-console.log(playerWins);
-console.log(computerWins);
 
-let displayResult = function (argComputerMove, argPlayerMove){
+const displayResult = function (argComputerMove, argPlayerMove){
 	printMessage('Zagrałem: ' + argComputerMove + ', a Ty: ' + argPlayerMove);
-	console.log('moves:', argComputerMove, argPlayerMove);
+	console.log('Moves:', argComputerMove, argPlayerMove);
 	
 	if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
 		printMessage('Ty wygrywasz!');
 		playerWins++;
-		console.log('PW: ', playerWins);
-		console.log('spr: ', argComputerMove, argPlayerMove);
 	} else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce' ) {
 		printMessage('Ty przegrywasz!');
 		computerWins++;
-		console.log('KW: ', computerWins);
 	} else if( argComputerMove == 'kamień' && argPlayerMove == 'kamień' ) {
 		printMessage('Remis!');
 	}else if( argComputerMove == 'papier' && argPlayerMove == 'papier' ) {
@@ -51,65 +45,57 @@ let displayResult = function (argComputerMove, argPlayerMove){
 	}else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce' ) {
 		printMessage('Ty wygrywasz!');
 		playerWins++;
-		console.log('PW: ', playerWins);
 	}else if( argComputerMove == 'papier' && argPlayerMove == 'kamień' ) {
 		printMessage('Ty przegrywasz!');
 		computerWins++;
-		console.log('KW: ', computerWins);
 	}else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień' ) {
 		printMessage('Ty wygrywasz!');
 		playerWins++;
-		console.log('PW: ', playerWins);
 	}else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier' ) {
 		printMessage('Ty przegrywasz!');
 		computerWins++;
-		console.log('KW: ', computerWins);
 	}else if( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce' ) {
 		printMessage('Remis!');
 	}else if( argPlayerMove == 'nieznany ruch' ) {
-		console.log('spr nieznany ruch');
 		printMessage('Gracz oszukuje!');
 	}
 	printScore(playerWins + ' - ' + computerWins);
 	console.log('Prawdopodobieństwo: ', (playerWins/(computerWins+playerWins)*100));
 }
 
-let playGame = function (playerInput){
+const playGame = function (playerInput){
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
 	console.log('Gracz wybrał: ' + playerInput);
 
     let computerMove = getMoveName(randomNumber);
 	let playerMove = getMoveName(playerInput);
-    //printMessage('Ruch komputera to: ' + computerMove);
-    //let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-    //printMessage('Twój ruch to: ' + playerMove);
-
     displayResult(computerMove, playerMove);
 }
 
-
-let playGameSymulation = function (){
-	
+const playGameSymulation = function (){
 	const proba = 100;
 	for (let  i = 0; i < proba; i++){
 	
 	let randomNumber = Math.floor(Math.random() * 3 + 1);
 	let randomNumberPlayer = Math.floor(Math.random() * 3 + 1);
-    
+    let percentPlayerWins = (playerWins/(playerWins+computerWins))*100;
+
     console.log('Komputer wybrał: ' + randomNumber);
 	console.log('Gracz wybrał: ' + randomNumberPlayer);
 	
-	// zwiekszenie do poziomu 66%, kolejny to 83% 
-	if (randomNumberPlayer == 2 && randomNumber == 3) {
-		randomNumber = 1;
-		console.log('---Po zmianie ', randomNumber);
+	if(percentPlayerWins <= 75){
+		if (randomNumberPlayer == 2 && randomNumber == 3) {
+			randomNumber = 1;
+		} else if (randomNumberPlayer == 3 && randomNumber == 1) {
+			randomNumber = 2;
+		} else if(randomNumberPlayer == 1 && randomNumber == 2) {
+			randomNumber = 3;
+		}
 	}
-
     let computerMove = getMoveName(randomNumber);
     let playerMove = getMoveName(randomNumberPlayer);
 
     displayResult(computerMove, playerMove);
-
 	}
 }
